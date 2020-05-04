@@ -234,7 +234,7 @@ class _VideoPlayer {
       VideoEvent(
         eventType: VideoEventType.initialized,
         duration: Duration(
-          milliseconds: (videoElement.duration * 1000).round(),
+          milliseconds: videoElement.duration.toString() != "Infinity" ? (videoElement.duration * 1000).round() :  (24 * 60 * 60 * 1000).round(),
         ),
         size: Size(
           videoElement.videoWidth.toDouble() ?? 0.0,
